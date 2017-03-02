@@ -26,7 +26,7 @@ function run() {
 function decrement() {
     for (number = 15; number.length < 0; i--) {
         $("#timer").html(number);
-    }
+    }}
     setTimeout(fifteenSeconds, 1000 * 1);
     setTimeout(tenSeconds, 1000 * 5);
     setTimeout(fiveSeconds, 1000 * 10);
@@ -51,9 +51,13 @@ function decrement() {
         $("#timer").html("no time left, you lose!!");
         console.log("No time left, you lose!");
     }
-}
+
+
+
 run();
 decrement();
+//stop();
+
 //questions
 function Question(text, choices, answer) {
     this.text = text;
@@ -98,17 +102,19 @@ function showProgress() {
 }
 
 function showScores() {
-    var gameOverHtml = "<h1>Result</h1>";
-    gameOverHtml += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
+    var gameOverHtml = "<h1>Result</h1><br>";
+    gameOverHtml += "<h2 id='score'> <center>Your score: " + quiz.score + "</center></h2>";
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHtml;
 }
 var questions = [
-    new Question("What does the roman numeral C represent?", ["30", "50", "75", "100"], "100")
-    , new Question("How many colours are there in a rainbow?", ["6", "7", "8", "9"], "7")
-    , new Question("What country gave Florida to the USA in 1891?", ["France", "Spain", "Mexico", "Germany"], "Spain")
-    , new Question("Who was the first man on the moon?", ["Lance Armstrong", "Buzz Lightyear", "Neil Armstrong", "John Glenn"], "Neil Armstrong")
-    , new Question("In 2020, Who is gonna run the whole election?", ["Usain Bolt", "Kanye West", "Tony Snell", "Chevrolet"], "Kanye West")
+    new Question("What does the roman numeral C represent?", ["30", "50", "75", "100"], "100"),
+    new Question("How many colours are there in a rainbow?", ["6", "7", "8", "9"], "7"),
+    new Question("What country gave Florida to the USA in 1891?", ["France", "Spain", "Mexico", "Germany"], "Spain"),
+    new Question("Who was the first man on the moon?", ["Lance Armstrong", "Buzz Lightyear", "Neil Armstrong", "John Glenn"], "Neil Armstrong"),
+    new Question("In 2020, Who is gonna run the whole election?", ["Usain Bolt", "Kanye West", "Tony Snell", "Chevrolet"], "Kanye West"),
+    new Question("What is the largest cultivated crop in The United States?", ["Corn", "Marijuana", "Tobacco", "Chickens"], "Corn"),
+    new Question("Panda.....PandaPandaPanda", ["China", "Desiigner", "Eucalyptis", "Bamboo"], "Desiigner")
 ];
 var quiz = new Quiz(questions);
 populate();
